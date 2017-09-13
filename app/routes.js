@@ -3,7 +3,8 @@
 // See http://blog.mxstbr.com/2016/01/react-apps-with-pages for more information
 // about the code splitting business
 import { getAsyncInjectors } from 'utils/asyncInjectors';
-
+import { push } from 'react-router-redux';
+import { homeReducer } from 'containers/HomePage/reducer'
 const errorLoading = (err) => {
   console.error('Dynamic page loading failed', err); // eslint-disable-line no-console
 };
@@ -14,7 +15,7 @@ const loadModule = (cb) => (componentModule) => {
 
 export default function createRoutes(store) {
   // Create reusable async injectors using getAsyncInjectors factory
-  const { injectReducer, injectSagas } = getAsyncInjectors(store); // eslint-disable-line no-unused-vars
+  const { injectReducer } = getAsyncInjectors(store); // eslint-disable-line no-unused-vars
 
   return [
     {
@@ -22,12 +23,13 @@ export default function createRoutes(store) {
       name: 'home',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
+          import('containers/HomePage/reducer'),
           import('containers/HomePage'),
         ]);
 
         const renderRoute = loadModule(cb);
-
-        importModules.then(([component]) => {
+        importModules.then(([reducer, component]) => {
+          injectReducer('home', reducer.default);
           renderRoute(component);
         });
 

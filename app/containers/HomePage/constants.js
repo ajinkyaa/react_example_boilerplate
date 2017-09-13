@@ -1,0 +1,7 @@
+const CHANGE_USERNAME = 'boilerplate/Home/CHANGE_USERNAME';
+const SELECT_USERNAME = 'boilerplate/Home/SELECT_USERNAME';
+
+export {
+  CHANGE_USERNAME,
+  SELECT_USERNAME
+}
