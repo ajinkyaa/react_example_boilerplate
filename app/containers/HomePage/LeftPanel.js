@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 
 const LeftPanel = styled.div`
-  position: fixed;
+  position: absolute;
   background-color: #fff;
-  margin-top: 10vh;
-  top: 0;
+  top: 43px;
   left: 0;
-  height: 40Vh;
+  bottom: 0
   overflow: auto;
-  padding-left: 20px;
   width: 210px;
 `;
 

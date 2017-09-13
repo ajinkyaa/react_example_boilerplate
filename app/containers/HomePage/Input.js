@@ -7,6 +7,7 @@ const Input = styled.input`
   height: 30px;
   padding-left: 10px;
   font-size: 16px;
+  background-color: #fff;
 `;
 
 export default Input;

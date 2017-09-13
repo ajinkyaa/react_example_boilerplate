@@ -1,4 +1,6 @@
 import React from "react"
+import LI from './Li'
+
 export default class ListItem extends React.Component{
   constructor(props) {
     super(props)
@@ -8,10 +10,10 @@ export default class ListItem extends React.Component{
   }
   render() {
     return(
-      <li>
+      <LI>
         <span>{this.props.items.text}</span>
         <a href="javascript:void(0)" onClick={this.handleSubmit.bind(this)} > select </a>
-      </li>
+      </LI>
     )
   }
 }
