@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
 const RightPanel = styled.div`
-  padding: 50px 0 0 210px;
-  text-align: center;
-  background-color: orange;
+  padding: 60px 0 0 220px;
 `;
 
 export default RightPanel;

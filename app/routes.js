@@ -35,7 +35,15 @@ export default function createRoutes(store) {
 
         importModules.catch(errorLoading);
       },
-    }, {
+    },{
+      path: '/features',
+      name: 'features',
+      getComponent(nextState, cb) {
+        import('containers/Features')
+          .then(loadModule(cb))
+          .catch(errorLoading);
+      },
+    },{
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {

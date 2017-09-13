@@ -55,6 +55,7 @@ export class HomePage extends React.PureComponent {
             id="username"
             type="text"
             value={this.getInputValue()}
+            placeholder="Please select an item from the list on the left"
             onChange={this.props.onChangeUsername} />
         </RightPanel>
       </PanelWrapper>
